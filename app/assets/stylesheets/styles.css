@@ -1,0 +1,56 @@
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #faf8ef;
+  font-family: Arial, sans-serif;
+}
+
+
+/* To center the main text */
+#game-container {
+  text-align: center;
+}
+
+/* Buttons style */
+/* Style for the reset button */
+#reset {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 25px;
+  margin-left: auto;
+}
+
+/* Hover effect for the reset button */
+#reset:hover {
+  background-color: darkred;
+}
+
+/* Style for the directional buttons */
+#up, #down, #left, #right {
+  background-color: rgb(234, 216, 145);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+/* Hover effect for the directional buttons */
+#up:hover, #down:hover, #left:hover, #right:hover {
+  background-color: rgb(184, 170, 114);
+}
+
+#score {
+  margin-left: 10px;
+  font-size: 18px;
+}
