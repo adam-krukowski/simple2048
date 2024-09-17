@@ -19,6 +19,12 @@ let board = [
 ];
 let score = 0;
 
+document.addEventListener("DOMContentLoaded", () => {
+  createBoard();
+
+});
+
+
 function createBoard() {
   const gameBoard = document.getElementById('game-board');
   gameBoard.innerHTML = ''; // Clear the board

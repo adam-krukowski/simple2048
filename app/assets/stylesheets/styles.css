@@ -75,3 +75,8 @@ body {
   color: white;
   border-radius: 5px;
 }
+
+.tile-2 {
+  background-color: #eee4da;
+  color: #776e65;
+}
