@@ -23,12 +23,13 @@ document.addEventListener("DOMContentLoaded", () => {
   createBoard();
   addRandomTile();
   addRandomTile(); /* to start a game with two random tiles */
+  updateBoard();
 });
 
 
 function createBoard() {
   const gameBoard = document.getElementById('game-board');
-  gameBoard.innerHTML = ''; // Clear the board
+  gameBoard.innerHTML = ''; /* Clear the board */
 
   for (let row = 0; row < SIZE; row++) {
       for (let col = 0; col < SIZE; col++) {
@@ -55,4 +56,18 @@ function addRandomTile() {
       const randomCell = emptyCells[randomIndex];
       board[randomCell.row][randomCell.col] = Math.random() < 0.9 ? 2 : 4;
   }
+}
+
+function updateBoard() {
+  const cells = document.querySelectorAll('.cell');
+  cells.forEach((cell, index) => {
+      const row = Math.floor(index / SIZE);
+      const col = index % SIZE;
+      const value = board[row][col];
+
+      cell.textContent = value === 0 ? '' : value;
+      cell.className = 'cell';
+      if (value > 0) cell.classList.add(`tile-${value}`);
+  });
+
 }
