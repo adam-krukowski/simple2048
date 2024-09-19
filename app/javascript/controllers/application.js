@@ -21,7 +21,8 @@ let score = 0;
 
 document.addEventListener("DOMContentLoaded", () => {
   createBoard();
-
+  addRandomTile();
+  addRandomTile(); /* to start a game with two random tiles */
 });
 
 
@@ -35,5 +36,23 @@ function createBoard() {
           cell.className = 'cell'; // Add the class 'cell' to the div
           gameBoard.appendChild(cell); // Add the cell to the board
       }
+  }
+}
+
+function addRandomTile() {
+  const emptyCells = [];
+
+  for (let row = 0; row < SIZE; row++) {
+      for (let col = 0; col < SIZE; col++) {
+          if (board[row][col] === 0) {
+              emptyCells.push({ row, col });
+          }
+      }
+  }
+
+  if (emptyCells.length > 0) {
+      const randomIndex = Math.floor(Math.random() * emptyCells.length);
+      const randomCell = emptyCells[randomIndex];
+      board[randomCell.row][randomCell.col] = Math.random() < 0.9 ? 2 : 4;
   }
 }
