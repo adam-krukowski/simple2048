@@ -22,7 +22,7 @@ let score = 0;
 document.addEventListener("DOMContentLoaded", () => {
   createBoard();
   addRandomTile();
-  addRandomTile(); /* to start a game with two random tiles */
+  addRandomTile(); /* To start a game with two random tiles */
   updateBoard();
 });
 
@@ -41,22 +41,28 @@ function createBoard() {
 }
 
 function addRandomTile() {
-  const emptyCells = [];
+  let emptyCells = [];
+  let count = 0;
 
+  // Find all empty cells (where value is 0)
   for (let row = 0; row < SIZE; row++) {
-      for (let col = 0; col < SIZE; col++) {
-          if (board[row][col] === 0) {
-              emptyCells.push({ row, col });
-          }
+    for (let col = 0; col < SIZE; col++) {
+      if (board[row][col] === 0) {
+        emptyCells[count] = { row: row, col: col }; // Store empty cell coordinates
+        count++; // Increase count of empty cells
       }
+    }
   }
 
-  if (emptyCells.length > 0) {
-      const randomIndex = Math.floor(Math.random() * emptyCells.length);
-      const randomCell = emptyCells[randomIndex];
-      board[randomCell.row][randomCell.col] = Math.random() < 0.9 ? 2 : 4;
+  // If there are empty cells, add a random tile
+  if (count > 0) {
+    let randomIndex = Math.floor(Math.random() * count); // Pick a random index
+    let randomCell = emptyCells[randomIndex]; // Get the corresponding empty cell
+    let randomValue = Math.random() < 0.9 ? 2 : 4; // Decide the new tile value (90% chance of 2, 10% chance of 4)
+    board[randomCell.row][randomCell.col] = randomValue; // Place the new tile
   }
 }
+
 
 function updateBoard() {
   const cells = document.querySelectorAll('.cell');
