@@ -24,6 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
   addRandomTile();
   addRandomTile(); /* To start a game with two random tiles */
   updateBoard();
+
+  document.getElementById('left').addEventListener('click', () => move('left'));
+  document.getElementById('right').addEventListener('click', () => move('right'));
+
 });
 
 
@@ -76,4 +80,72 @@ function updateBoard() {
       if (value > 0) cell.classList.add(`tile-${value}`);
   });
 
+}
+
+
+function moveLeft() {
+  let moved = false;
+  for (let row = 0; row < SIZE; row++) {
+      const originalRow = [...board[row]];
+      let newRow = combineRow(board[row]);
+      if (JSON.stringify(newRow) !== JSON.stringify(originalRow)) {
+          moved = true;
+      }
+      board[row] = newRow;
+  }
+  return moved;
+}
+
+function moveRight() {
+  let moved = false;
+  for (let row = 0; row < SIZE; row++) {
+      const originalRow = [...board[row]];
+      board[row] = board[row].reverse();
+      let newRow = combineRow(board[row]);
+      board[row] = newRow.reverse();
+      if (JSON.stringify(newRow) !== JSON.stringify(originalRow)) {
+          moved = true;
+      }
+  }
+  return moved;
+}
+
+function move(direction) {
+  let moved = false;   //to check later if its not buggy
+  switch (direction) {
+      case 'up':
+          moved = moveUp();
+          break;
+      case 'down':
+          moved = moveDown();
+          break;
+      case 'left':
+          moved = moveLeft();
+          break;
+      case 'right':
+          moved = moveRight();
+          break;
+  }
+  if (moved) {
+      addRandomTile();
+      updateBoard();
+      if (isGameOver()) {
+          alert('Game Over!');
+      }
+  }
+}
+
+function combineRow(row) {
+  let newRow = row.filter(val => val !== 0);
+  for (let i = 0; i < newRow.length - 1; i++) {
+      if (newRow[i] === newRow[i + 1]) {
+          newRow[i] *= 2;
+          score += newRow[i];
+          newRow.splice(i + 1, 1);
+      }
+  }
+  while (newRow.length < SIZE) {
+      newRow.push(0);
+  }
+  return newRow;
 }
