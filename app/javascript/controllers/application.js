@@ -25,6 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
   addRandomTile(); /* To start a game with two random tiles */
   updateBoard();
 
+  document.getElementById('up').addEventListener('click', () => move('up'));
+  document.getElementById('down').addEventListener('click', () => move('down'));
   document.getElementById('left').addEventListener('click', () => move('left'));
   document.getElementById('right').addEventListener('click', () => move('right'));
 
@@ -105,6 +107,36 @@ function moveRight() {
       board[row] = newRow.reverse();
       if (JSON.stringify(newRow) !== JSON.stringify(originalRow)) {
           moved = true;
+      }
+  }
+  return moved;
+}
+
+function moveUp() {
+  let moved = false;
+  for (let col = 0; col < SIZE; col++) {
+      const originalCol = board.map(row => row[col]);
+      let newCol = combineRow(originalCol);
+      if (JSON.stringify(newCol) !== JSON.stringify(originalCol)) {
+          moved = true;
+      }
+      for (let row = 0; row < SIZE; row++) {
+          board[row][col] = newCol[row];
+      }
+  }
+  return moved;
+}
+
+function moveDown() {
+  let moved = false;
+  for (let col = 0; col < SIZE; col++) {
+      const originalCol = board.map(row => row[col]);
+      let newCol = combineRow(originalCol.reverse());
+      if (JSON.stringify(newCol.reverse()) !== JSON.stringify(originalCol)) {
+          moved = true;
+      }
+      for (let row = 0; row < SIZE; row++) {
+          board[row][col] = newCol[row];
       }
   }
   return moved;
