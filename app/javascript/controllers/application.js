@@ -82,6 +82,8 @@ function updateBoard() {
       if (value > 0) cell.classList.add(`tile-${value}`);
   });
 
+  document.getElementById('score').textContent = `Score: ${score}`;
+
 }
 
 
