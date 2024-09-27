@@ -80,3 +80,29 @@ body {
   background-color: #eee4da;
   color: #776e65;
 }
+
+
+.tile-8 {
+  background-color: #f2b179;
+  color: white;
+}
+
+.tile-16 {
+  background-color: #f59563;
+  color: white;
+}
+
+.tile-32 {
+  background-color: #f67c5f;
+  color: white;
+}
+
+.tile-64 {
+  background-color: #f65e3b;
+  color: white;
+}
+
+.tile-128 {
+  background-color: #edcf72;
+  color: white;
+}
