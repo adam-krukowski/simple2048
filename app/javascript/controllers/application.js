@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById('down').addEventListener('click', () => move('down'));
   document.getElementById('left').addEventListener('click', () => move('left'));
   document.getElementById('right').addEventListener('click', () => move('right'));
+  document.getElementById('reset').addEventListener('click', resetGame);
 
 });
 
@@ -182,4 +183,12 @@ function combineRow(row) {
       newRow.push(0);
   }
   return newRow;
+}
+
+function resetGame() {
+  board.forEach(row => row.fill(0));
+  score = 0;
+  addRandomTile();
+  addRandomTile();
+  updateBoard();
 }
