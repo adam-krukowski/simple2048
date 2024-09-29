@@ -106,3 +106,23 @@ body {
   background-color: #edcf72;
   color: white;
 }
+
+.tile-256 {
+  background-color: #bea459;
+  color: white;
+}
+
+.tile-512 {
+  background-color: #9a8548;
+  color: white;
+}
+
+.tile-1024 {
+  background-color: #b49024;
+  color: white;
+}
+
+.tile-2048 {
+  background-color: #e9b20d;
+  color: white;
+}
