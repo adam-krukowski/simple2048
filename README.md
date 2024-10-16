@@ -1,24 +1,48 @@
-# README
+2048 Game Clone 🎮
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple implementation of the classic "2048" game using HTML, CSS, and JavaScript. The goal is to merge tiles with the same numbers to reach the value of 2048.
 
-Things you may want to cover:
+Features
 
-* Ruby version
+🕹️ Directional Controls: Move tiles up, down, left, or right.
+🔄 Reset Button: Restart the game at any time.
+🎲 Random Tiles: New tiles (2 or 4) appear randomly on the board.
+📊 Score Tracking: Keep track of your current score.
+🎨 Responsive Design: The game layout adjusts to different screen sizes.
+🔧 Smooth Animations: Tile movements and merges are smoothly animated.
 
-* System dependencies
+Installation
 
-* Configuration
+⚪️ Clone the repository:
+git clone https://github.com/adam-krukowski/simple2048
 
-* Database creation
+⚪️ Navigate to the project directory:
+cd simple2048
 
-* Database initialization
+⚪️ Open index.html in your web browser:
+You can double-click the index.html.erb file or open it using your preferred browser.
 
-* How to run the test suite
+Usage
 
-* Services (job queues, cache servers, search engines, etc.)
+🎮 Play the game: Use on-screen controls to slide the tiles in the desired direction.
+🔄 Reset the game: Click the "Reset Game" button to start over.
 
-* Deployment instructions
+Project Structure
 
-* ...
+⚪️ index.html: The main HTML file that structures the game.
+
+⚪️ styles.css: CSS file for styling the game board, tiles, and controls.
+
+⚪️ game.js: JavaScript file containing the game logic for tile movements and updates.
+
+Customization
+
+You can customize the game by editing the following:
+
+⚪️ Tile appearance: Change the styles in styles.css to modify tile colors, fonts, or animations.
+
+⚪️ Game size: Adjust the board size in the JavaScript code to create different grid configurations (e.g., 3x3, 5x5).
+
+License
+
+This project is open-source and available under the MIT License.
