@@ -24,7 +24,7 @@ git clone https://github.com/adam-krukowski/simple2048
 ⚪️ Navigate to the project directory:
 cd simple2048
 
-⚪️ Open index.html in your web browser:
+⚪️ Open index.html.erb in your web browser:
 You can double-click the index.html.erb file or open it using your preferred browser.
 
 Usage
@@ -37,7 +37,7 @@ Usage
 
 Project Structure
 
-⚪️ index.html: The main HTML file that structures the game.
+⚪️ index.html.erb: The main HTML file that structures the game.
 
 ⚪️ styles.css: CSS file for styling the game board, tiles, and controls.
 
