@@ -1,4 +1,4 @@
-2048 Game Clone 🎮
+🎮 2048 Game Clone 
 
 A simple implementation of the classic "2048" game using HTML, CSS, and JavaScript. The goal is to merge tiles with the same numbers to reach the value of 2048.
 
