@@ -50,7 +50,3 @@ You can customize the game by editing the following:
 ⚪️ Tile appearance: Change the styles in styles.css to modify tile colors, fonts, or animations.
 
 ⚪️ Game size: Adjust the board size in the JavaScript code to create different grid configurations (e.g., 3x3, 5x5).
-
-License
-
-This project is open-source and available under the MIT License.
