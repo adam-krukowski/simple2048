@@ -6,7 +6,7 @@ Features
 
 🕹️ Directional Controls: Move tiles up, down, left, or right.
 
-🔄 Reset Button: Restart the game at any time.
+🔄 Reset Button: Restart the game at any time. 
 
 🎲 Random Tiles: New tiles (2 or 4) appear randomly on the board.
 
